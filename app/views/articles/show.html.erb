@@ -3,4 +3,8 @@
 <ul>
     <li><%= link_to 'Back to Home', articles_path %></li>
     <li><%= link_to 'Edit Article', edit_article_path %></li>
+    <li><%= link_to "Destroy Article", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "This will delete the article. Confirm?"
+                  } %></li>
 </ul>
