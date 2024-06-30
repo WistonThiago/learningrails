@@ -1,10 +1,11 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
-<ul>
-    <li><%= link_to 'Back to Home', articles_path %></li>
-    <li><%= link_to 'Edit Article', edit_article_path(@article) %></li>
-    <li><%= link_to "Destroy Article", article_path(@article), data: {
+<article class="blog-post">
+<h2 class="blog-post-title"><%= @article.title %></h2>
+<p class="blog-post-meta"><%= date_post(@article.created_at) %> by <a href="#">Chris</a></p>
+  <p><%= @article.body %></p>
+    <%= link_to 'Edit Article', edit_article_path(@article), class: 'btn btn-secondary' %>
+    <%= link_to "Destroy Article", article_path(@article), data: {
                     turbo_method: :delete,
                     turbo_confirm: "This will delete the article. Confirm?"
-                  } %></li>
-</ul>
+                  }, class: 'btn btn-danger' %>
+    <%= link_to 'Back to Home', articles_path, class: 'btn btn-primary'%>
+</article>
