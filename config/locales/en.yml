@@ -29,3 +29,9 @@
 
 en:
   hello: "Hello world"
+
+# config/locales/en.yml
+en:
+  articles:
+    new:
+      title: "New Article"
