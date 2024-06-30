@@ -1,19 +1,25 @@
-<%= link_to 'New Article', new_article_path %>
-<p>
-  <%= link_to t('articles.new.title'), new_article_path,
-    class: 'btn btn-success',
-    'data-bs-toggle': 'tooltip',
-    'data-bs-placement': 'top',
-      title: t('articles.new.title')
-  %>
-</p>
 
-    <ul>
-        <% @articles.each do |article| %>
-        <li>
-            <a href="<%= article_path(article) %>">
-                <%= link_to article.title, article %>
-            </a>
-        </li>
-        <% end %>
-    </ul>
+<%= render 'longer_featured' %>
+
+<%= render 'medium_featured' %>
+
+ <!--  <p><%= link_to t('articles.new.title'), new_article_path,
+      class: 'btn btn-success',
+      'data-bs-toggle': 'tooltip',
+      'data-bs-placement': 'left',
+        title: t('articles.new.title') %>
+  </p> -->
+
+<div class="row g-5">
+    <div class="col-md-8">
+    <h3 class="pb-4 mb-4 fst-italic border-bottom">
+      From the Firehose
+    </h3>
+    <%= link_to 'New Article', new_article_path %>
+      <%= render @articles %>
+      <%= render 'pagination' %>
+  </div>
+
+  <%= render 'archives' %>
+
+</div>
