@@ -77,3 +77,4 @@ gem "simple_form", "~> 5.3"
 group :development, :test do
   gem 'rspec-rails', '~> 6.1.0'
 end
+gem "kaminari", "~> 1.2"
